@@ -31,10 +31,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  <!--Livechat-->
-  <script type="text/javascript">
-    window.$crisp=[];window.CRISP_WEBSITE_ID="830aab75-eb22-46a2-91d8-f4f3e7a0575b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-  </script>
+ 
 </head>
 
 <body>
@@ -78,8 +75,7 @@
                           <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                          <form method="POST" name="perizinan-script"
-                          action="https://script.google.com/macros/s/AKfycbxSDMPsxLLIzfL-j5ANBFkvv5iczSJM0VpW5IBzt4JVI9YeeIhxaKdCuy82V8nIGt3DeA/exec">
+                          <form method="POST" name="form-perizinan">
                                   
                               <div class="form-floating mb-3">
                                 <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="nama">
@@ -93,29 +89,9 @@
                                 <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
                                 <label for="floatingInput">Email</label>
                               </div>
-                              <div class="row form-group mb-3">
-                                <div class="col-sm-12">
-                                    <div class="input-group date" id="datepicker">
-                                        <input type="text" class="form-control" placeholder="Tanggal">
-                                        <span class="input-group-append">
-                                            <span class="input-group-text bg-white d-block">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
                               <div class="form-floating mb-3">
                                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="tujuan"></textarea>
                                 <label for="floatingTextarea2">Tujuan</label>
-                              </div>
-                              <div class="mb-3">
-                                <label for="formFile" class="form-label">Surat</label>
-                                <input class="form-control" type="file" id="formFile" name="surat">
-                              </div>
-                              <div class="mb-3">
-                                <label for="formFile" class="form-label">Dokumen</label>
-                                <input class="form-control" type="file" id="formFile" name="dokumen">
                               </div>
                               <div>
                                   <button class="btn btn-primary btn-kirim" type="submit">Kirim</button>
@@ -141,10 +117,10 @@
   <!-- ======= Footer ======= -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h3>About SoftLand</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
+      <div class="row justify-content-center text-center">
+        <div class="col-7 mb-3 mt-5" style="text-align: center;">
+          <h3 style="color: black;">About BBPJN DKI Jakarta-Jawa Barat</h3>
+          <p style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
             dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
           <p class="social">
             <a href="#"><span class="bi bi-twitter"></span></a>
@@ -153,46 +129,16 @@
             <a href="#"><span class="bi bi-linkedin"></span></a>
           </p>
         </div>
-        <div class="col-md-7 ms-auto">
-          <div class="row site-section pt-0">
-            <div class="col-md-4 mb-4 mb-md-0">
-              <h3>Navigation</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-              <h3>Services</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Collaboration</a></li>
-                <li><a href="#">Todos</a></li>
-                <li><a href="#">Events</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-              <h3>Downloads</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">Get from the App Store</a></li>
-                <li><a href="#">Get from the Play Store</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7">
-          <p class="copyright">&copy; Copyright BBPJN DKI Jakarta-Jawa Barat. All Rights Reserved</p>
+    </footer>
+      <div class="row justify-content-center text-center" style="background-color: rgb(1, 23, 223);">
+        <div class="col-md-7 mt-2">
+          <p class="copyright" style="color: white;">&copy; Copyright BBPJN DKI Jakarta-Jawa Barat. All Rights Reserved</p>
         </div>
       </div>
 
     </div>
-  </footer>
-
+  
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
@@ -216,8 +162,8 @@
 </script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxSDMPsxLLIzfL-j5ANBFkvv5iczSJM0VpW5IBzt4JVI9YeeIhxaKdCuy82V8nIGt3DeA/exec'
-  const form = document.forms['perizinan-script'];
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxJusA1U30VljlhLOeVrTp_cdWYV6esYVWYSGPtjQFpIFxeCAFLQQpebASmcLo_kjbOVg/exec'
+  const form = document.forms['form-perizinan'];
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-loading');
   const Alert = document.querySelector('.alert');
