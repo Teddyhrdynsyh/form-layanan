@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Permohonan Perizinan Publik</title>
+  <title>Permohonan Informasi Publik</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="contact.html" style="text-decoration: none;">Contact Us</a></li>
+          <li><a href="#kontak" style="text-decoration: none;">Contact Us</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -74,30 +74,66 @@
                           <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                          <form method="POST" name="form-perizinan">
-                                  
+                          <form method="POST" name="informasi-publik" enctype="multipart/form-data">
+                               <h6 style="color: black;">Data Pemohon Informasi</h6>   
                               <div class="form-floating mb-3">
-                                <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="nama">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
                                 <label for="floatingInput">Nama</label>
                               </div>
                               <div class="form-floating mb-3">
-                                <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat" name="alamat">
-                                <label for="floatingInput">Alamat</label>
+                                <input type="identitas" class="form-control" id="floatingInput" placeholder="Nomor Identitas (KTP/SIM)" name="Identitas">
+                                <label for="floatingInput">Nomor Identitas (KTP/SIM)*</label>
                               </div>
                               <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+                                <input type="paspor/kk" class="form-control" id="floatingInput" placeholder="Paspor/Kartu Keluarga*" name="Paspor/kk">
+                                <label for="floatingInput">Paspor/Kartu Keluarga*</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat Rumah" name="Rumah">
+                                <label for="floatingInput">Alamat Rumah</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="telepon" class="form-control" id="floatingInput" placeholder="Nomor Telepon" name="Telepon">
+                                <label for="floatingInput">Nomor Telepon</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
                                 <label for="floatingInput">Email</label>
                               </div>
                               <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="tujuan"></textarea>
-                                <label for="floatingTextarea2">Tujuan</label>
+                                <input type="pekerjaan" class="form-control" id="floatingInput" placeholder="Pekerjaan" name="Pekerjaan">
+                                <label for="floatingInput">Pekerjaan</label>
                               </div>
-                                  <button class="btn btn-primary btn-kirim" type="submit">Kirim</button>
-                                  <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                    Loading...
-                                  </button>
+                              <div class="form-floating mb-5">
+                                <input type="kantor" class="form-control" id="floatingInput" placeholder="Alamat Kantor" name="Kantor">
+                                <label for="floatingInput">Alamat Kantor</label>
                               </div>
+                              <h6 style="color: black;">Pengajuan Permohonan Informasi</h6>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="Informasi" style="height: 100px" name="Informasi"></textarea>
+                                <label for="floatingTextarea1">Rincian Informasi yang Dibutuhkan</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="Tujuan" style="height: 100px" name="Tujuan"></textarea>
+                                <label for="floatingTextarea2">Rincian Tujuan Penggunaan Informasi</label>
+                              </div>
+                              <select class="form-select mb-3" aria-label=".form-select-lg example" name="Via">
+                                <option selected>Cara Mendapatkan Salinan Informasi</option>
+                                <option value="Diambil Langsung">Diambil Langsung</option>
+                                <option value="Kurir">Kurir</option>
+                                <option value="Via Pos">Via Pos</option>
+                                <option value="Email">Email</option>
+                                <option value="Whatsapp">Whatsapp</option>
+                              </select>
+                              <div class="mb-3">
+                                <label for="formFile" class="form-label">Surat</label>
+                                <input class="form-control" type="file" id="formFile">
+                              </div>
+                                <button class="btn btn-primary btn-kirim" type="submit">Kirim</button>
+                                <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                                </button>
                           </form>
                       </div>
                   </div>
@@ -113,7 +149,7 @@
 
 
   <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer" role="contentinfo" id="kontak">
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-5 mt-5" style="text-align: center;">
@@ -121,16 +157,16 @@
           <p style="color: black;">BBPJN DKI Jakarta-Jawa Barat Direktorat Jenderal Bina Marga
             Jalan A.H Nasution No. 264 Kota Bandung-Jawa Barat</p>
           <p class="social">
-            <a href="#"><span class="bi bi-twitter"></span></a>
-            <a href="#"><span class="bi bi-instagram"></span></a>
-            <a href="#"><span class="bi bi-tiktok"></span></a>
+            <a href="https://x.com/pupr_dkijabar?t=5UBOc9WA9imwgdXxa9ZT1w&s=09"><span class="bi bi-twitter"></span></a>
+            <a href="https://www.instagram.com/pupr_jalan_dkijabar?igsh=aWV1azFtamhsMjd3"><span class="bi bi-instagram"></span></a>
+            <a href="https://www.tiktok.com/@pupr_jalan_dkijabar?_t=8klhmO2cyF6&_r=1"><span class="bi bi-tiktok"></span></a>
           </p>
         </div>
       </div>
     </footer>
       <div class="row justify-content-center text-center" style="background-color: #344676;">
         <div class="col-md-7 mt-2">
-          <p class="copyright" style="color: white;">&copy; Copyright BBPJN DKI Jakarta-Jawa Barat. All Rights Reserved</p>
+          <p class="copyright" style="color: white;">&copy; Copyright 2024 BBPJN DKI Jakarta-Jawa Barat</p>
         </div>
       </div>
 
@@ -159,8 +195,8 @@
 </script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxJusA1U30VljlhLOeVrTp_cdWYV6esYVWYSGPtjQFpIFxeCAFLQQpebASmcLo_kjbOVg/exec'
-  const form = document.forms['form-perizinan'];
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
+  const form = document.forms['informasi-publik'];
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-loading');
   const Alert = document.querySelector('.alert');
