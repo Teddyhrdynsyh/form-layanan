@@ -134,6 +134,11 @@ section {
   color: #2d71a1;
 }
 
+.btn.btn-list{
+  background: #fff;
+  margin: 5px;
+}
+
 .btn.btn-primary {
   background: #2d71a1;
   background: linear-gradient(-45deg, #3d5db8, #344676);
