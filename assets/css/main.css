@@ -215,6 +215,32 @@ h6,
   /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.about{
+  padding: 0rem 0 2rem 0;
+  margin-top: 150px;
+}
+.about h3 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.about ul li {
+  margin-bottom: 10px;
+}
+
+.about a {
+  color: #000;
+}
+
+.about .copyright {
+  margin-bottom: 0px;
+}
+
+.about .copyright,
+.about .credits {
+  font-size: 14px;
+}
+
 .footer {
   padding: 0rem 0 2rem 0;
 }

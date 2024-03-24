@@ -55,10 +55,10 @@
 
   <div class="judul text-center text-lg-start">
     <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Daftar Layanan</strong></h1>
-    <h5 data-aos="fade-right" data-aos-delay="100" style="text-align: center;">Silahkan Pilih Layanan Kami!</h5>
+    <h5 class="mb-5" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">Silahkan Pilih Layanan Kami!</h5>
   </div>
 
-  <div class="container" id="Harga" data-aos="fade-right" data-aos-delay="200">
+  <div class="container mt-5 mb-5" data-aos="fade-right" data-aos-delay="200">
           <div class="row justify-content-md-center" style="color:white;">
             <div class="col-sm-2" style="text-align: center;">
                 <a href="https://oksip.pu.go.id/">
@@ -100,11 +100,26 @@
       </div>
 
 
-  <!-- ======= Footer ======= -->
-   
+ <!-- ======= Footer ======= -->
+ <footer class="about" role="contentinfo" id="kontak">
+    <div class="container">
       <div class="row justify-content-center text-center">
+        <div class="col-5" style="text-align: center;">
+          <h3 style="color: black; ">Kontak Kami</h3>
+          <p style="color: black;">BBPJN DKI Jakarta-Jawa Barat Direktorat Jenderal Bina Marga
+            Jalan A.H Nasution No. 264 Kota Bandung-Jawa Barat</p>
+          <p class="social">
+            <a href="https://x.com/pupr_dkijabar?t=5UBOc9WA9imwgdXxa9ZT1w&s=09"><span class="bi bi-twitter"></span></a>
+            <a href="https://www.instagram.com/pupr_jalan_dkijabar?igsh=aWV1azFtamhsMjd3"><span class="bi bi-instagram"></span></a>
+            <a href="https://www.tiktok.com/@pupr_jalan_dkijabar?_t=8klhmO2cyF6&_r=1"><span class="bi bi-tiktok"></span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+   
+      <div class="row justify-content-center text-center" style="background-color: #344676;">
         <div class="col-md-7 mt-2">
-          <p class="copyright" style="color: black;">&copy; Copyright 2024 BBPJN DKI Jakarta-Jawa Barat</p>
+          <p class="copyright" style="color: white;">&copy; Copyright 2024 BBPJN DKI Jakarta-Jawa Barat</p>
         </div>
       </div>
 
