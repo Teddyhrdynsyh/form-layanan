@@ -24,17 +24,16 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- Datepicker-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
  
 </head>
 
-<body>
+<body style="background-image: url(assets/img/baner.png);">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -53,99 +52,85 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <div class="wrapper">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 hero-text-image">
-          <div class="row">
-            <div class="col-lg-12 text-center text-lg-start">
-              <h1 data-aos="fade-right" style="text-align: center; margin-top: 200px; font-size: 40px;"><strong>Permohonan Informasi Publik</strong></h1>
-              <h5 class="mb-5" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">Silahkan Kirim Permohonan Informasi Anda Kepada Kami!</h5>
-            </div>
-            <div class="page-wrapper">
-              <div class="wrapper wrapper--w680" data-aos="fade-right">
-                  <div class="card card-5">
-                      <div class="card-heading">
-                          <h2 class="title">Form Permohonan Informasi</h2>
-                      </div>
-                      <div class="card-body">
-                        <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
-                          <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                          <form method="POST" name="informasi-publik" enctype="multipart">
-                               <h6 style="color: black;">Data Pemohon Informasi</h6>   
-                              <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
-                                <label for="floatingInput">Nama</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="identitas" class="form-control" id="floatingInput" placeholder="Nomor Identitas (KTP/SIM)" name="Identitas">
-                                <label for="floatingInput">Nomor Identitas (KTP/SIM)*</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="paspor/kk" class="form-control" id="floatingInput" placeholder="Paspor/Kartu Keluarga*" name="Paspor/kk">
-                                <label for="floatingInput">Paspor/Kartu Keluarga*</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat Rumah" name="Rumah">
-                                <label for="floatingInput">Alamat Rumah</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="telepon" class="form-control" id="floatingInput" placeholder="Nomor Telepon" name="Telepon">
-                                <label for="floatingInput">Nomor Telepon</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
-                                <label for="floatingInput">Email</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <input type="pekerjaan" class="form-control" id="floatingInput" placeholder="Pekerjaan" name="Pekerjaan">
-                                <label for="floatingInput">Pekerjaan</label>
-                              </div>
-                              <div class="form-floating mb-5">
-                                <input type="kantor" class="form-control" id="floatingInput" placeholder="Alamat Kantor" name="Kantor">
-                                <label for="floatingInput">Alamat Kantor</label>
-                              </div>
-                              <h6 style="color: black;">Pengajuan Permohonan Informasi</h6>
-                              <div class="form-floating mb-3">
-                               <textarea class="form-control" placeholder="Leave a comment here" id="Informasi" style="height: 100px" name="Informasi"></textarea>
-                                <label for="floatingTextarea1">Rincian Informasi yang Dibutuhkan</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="Tujuan" style="height: 100px" name="Tujuan"></textarea>
-                                <label for="floatingTextarea2">Rincian Tujuan Penggunaan Informasi</label>
-                              </div>
-                              <select class="form-select mb-3" aria-label=".form-select-lg example" name="Via">
-                                <option selected>Cara Mendapatkan Salinan Informasi</option>
-                                <option value="Diambil Langsung">Diambil Langsung</option>
-                                <option value="Kurir">Kurir</option>
-                                <option value="Via Pos">Via Pos</option>
-                                <option value="Email">Email</option>
-                                <option value="Whatsapp">Whatsapp</option>
-                              </select>
-                              <div class="mb-3">
-                                <label for="formFile" class="form-label">Surat</label>
-                                <input class="form-control" type="file" id="formFile" name="Surat">
-                              </div>
-                                <button class="btn btn-primary btn-kirim" type="submit">Kirim</button>
-                                <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                Loading...
-                                </button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-lg-12 text-center text-lg-start">
+      <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Permohonan Informasi Publik</strong></h1>
+      <h5 class="mb-5" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">Silahkan Kirim Permohonan Informasi Anda Kepada Kami!</h5>
   </div>
 
-  <!-- End Hero -->
+  <div class="form"> 
+  <div class="card card-5" data-aos="fade-right" data-aos-delay="200" >
+      <div class="card-heading">
+          <h2 class="title">Form Permohonan Informasi</h2>
+      </div>
+      <div class="card-body">
+          <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+            <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+            <form method="POST" name="informasi-publik" enctype="multipart">
+                  <h6 style="color: black;">Data Pemohon Informasi</h6>   
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
+                  <label for="floatingInput">Nama</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="identitas" class="form-control" id="floatingInput" placeholder="Nomor Identitas (KTP/SIM)" name="Identitas">
+                  <label for="floatingInput">Nomor Identitas (KTP/SIM)*</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="paspor/kk" class="form-control" id="floatingInput" placeholder="Paspor/Kartu Keluarga*" name="Paspor/kk">
+                  <label for="floatingInput">Paspor/Kartu Keluarga*</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat Rumah" name="Rumah">
+                  <label for="floatingInput">Alamat Rumah</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="telepon" class="form-control" id="floatingInput" placeholder="Nomor Telepon" name="Telepon">
+                  <label for="floatingInput">Nomor Telepon</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
+                  <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="pekerjaan" class="form-control" id="floatingInput" placeholder="Pekerjaan" name="Pekerjaan">
+                  <label for="floatingInput">Pekerjaan</label>
+                </div>
+                <div class="form-floating mb-5">
+                  <input type="kantor" class="form-control" id="floatingInput" placeholder="Alamat Kantor" name="Kantor">
+                  <label for="floatingInput">Alamat Kantor</label>
+                </div>
+                <h6 style="color: black;">Pengajuan Permohonan Informasi</h6>
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="Informasi" style="height: 100px" name="Informasi"></textarea>
+                  <label for="floatingTextarea1">Rincian Informasi yang Dibutuhkan</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="Tujuan" style="height: 100px" name="Tujuan"></textarea>
+                  <label for="floatingTextarea2">Rincian Tujuan Penggunaan Informasi</label>
+                </div>
+                <select class="form-select mb-3" aria-label=".form-select-lg example" name="Via">
+                  <option selected>Cara Mendapatkan Salinan Informasi</option>
+                  <option value="Diambil Langsung">Diambil Langsung</option>
+                  <option value="Kurir">Kurir</option>
+                  <option value="Via Pos">Via Pos</option>
+                  <option value="Email">Email</option>
+                  <option value="Whatsapp">Whatsapp</option>
+                </select>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Surat</label>
+                  <input class="form-control" type="file" id="formFile" name="Surat">
+                </div>
+                  <button class="btn btn-primary btn-kirim rounded-pill" type="submit">Kirim</button>
+                  <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                  </button>
+            </form>
+        </div>
+  </div>
+  </div>
 
 
   <!-- ======= Footer ======= -->

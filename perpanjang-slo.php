@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sewa Alat</title>
+  <title>Perpanjang SLO</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -54,16 +54,14 @@
   </header><!-- End Header -->
 
   <div class="col-lg-12 text-center text-lg-start">
-    <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Sewa Alat</strong></h1>
-    <p class="mb-3" data-aos="fade-right" data-aos-delay="100" style="text-align: center; color: white;">Silahkan Download Terlebih Dahulu Surat Permohonan Sewa Sebelum Mengisi Form Penyewaan di Bawah Ini!</p>
-    <a class="btn btn-outline-light rounded-pill" data-aos="fade-right" data-aos-delay="200" href="assets/dok/Draft Permohonan Sewa Alat.docx" download="Draft Permohonan Sewa Alat" role="button">Unduh File</a>
-    <a class="btn btn-outline-light rounded-pill" data-aos="fade-right" data-aos-delay="200" href="#Harga" role="button">Cek Daftar Harga</a>
+    <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Perpanjang SLO</strong></h1>
+    <p class="mb-3" data-aos="fade-right" data-aos-delay="100" style="text-align: center; color: white;">Dibutuhkan Sertifikat AMP Untuk Perpanjangan SLO!</p>
   </div>
 
   <div class="sewa"> 
     <div class="card card-5" data-aos="fade-right" data-aos-delay="200" >
         <div class="card-heading">
-            <h2 class="title">Form Permohonan Informasi</h2>
+            <h2 class="title">Form Perpanjang SLO</h2>
         </div>
         <div class="card-body">
             <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
@@ -74,10 +72,6 @@
                 <div class="form-floating mb-3">
                   <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="nama">
                   <label for="floatingInput">Nama</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat" name="alamat">
-                  <label for="floatingInput">Alamat</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="alamat" class="form-control" id="floatingInput" placeholder="Email" name="email">
@@ -91,27 +85,16 @@
                   <input type="text" class="form-control" id="floatingInput" placeholder="Nama Perusahaan" name="perusahaan">
                   <label for="floatingInput">Nama Perusahaan</label>
                 </div>
-                <label for="floatingInput">Alat</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Excavator" name="alat" id="flexCheckDefault1">
-                  <label class="form-check-label" for="flexCheckDefault1">
-                    Excavator
-                  </label>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Lokasi AMP" name="lokasi">
+                  <label for="floatingInput">Lokasi AMP</label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Bulldozer" name="alat" id="flexCheckDefault2">
-                  <label class="form-check-label" for="flexCheckDefault2">
-                    Bulldozer
-                  </label>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Titik Koordinat" name="koordinat">
+                  <label for="floatingInput">Titik Koordinat</label>
                 </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" value="Bulldozer" name="alat" id="flexCheckDefault3">
-                  <label class="form-check-label" for="flexCheckDefault3">
-                    Crane
-                  </label>
-                </div>
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Upload Surat Permohonan Anda</label>
+                <div class="mb-3 ">
+                    <label for="formFile" class="form-label">Upload Sertifikat AMP</label>
                     <input class="form-control" type="file" id="formFile" name="Surat">
                   </div>
                     <button class="btn btn-primary btn-kirim rounded-pill" type="submit">Kirim</button>
@@ -124,51 +107,6 @@
           </div>
     </div>
   </div>
-
-  <!-- katalog -->
-      <div class="container" id="Harga">
-        <h3 style="color: black; text-align: center;">Daftar Harga Sewa Alat</h3>
-          <div class="row">
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-            <div class="col-md-4 mt-3" style="text-align: center;">
-              <img src="assets/img/excavator.jpg" class="img-fluid img-thumbnail" alt="...">
-              <h6 class="card-title mt-2">Excavator</h6>
-              <p class="card-text">Harga Sewa</p>
-            </div>
-          </div>
-        
-        <br>
-        <h6 style="color:black;">*Catatan:</h6>
-        <p>Harga yang tertera belum termasuk biaya mobilisasi dan asuransi</p>
-      </div>
-  <!-- katalog -->
-
-
-  <!-- End Hero -->
 
 
   <!-- ======= Footer ======= -->
@@ -211,6 +149,53 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+  // variabel global marker
+var marker;
+  
+  function taruhMarker(peta, posisiTitik){
+      
+      if( marker ){
+        // pindahkan marker
+        marker.setPosition(posisiTitik);
+      } else {
+        // buat marker baru
+        marker = new google.maps.Marker({
+          position: posisiTitik,
+          map: peta
+        });
+      }
+    
+       // isi nilai koordinat ke form
+      document.getElementById("lat").value = posisiTitik.lat();
+      document.getElementById("lng").value = posisiTitik.lng();
+      
+  }
+    
+  function initialize() {
+    var propertiPeta = {
+      center:new google.maps.LatLng(-8.5830695,116.3202515),
+      zoom:9,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    
+    var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+    
+    // even listner ketika peta diklik
+    google.maps.event.addListener(peta, 'click', function(event) {
+      taruhMarker(this, event.latLng);
+    });
+  
+  }
+  
+  
+  // event jendela di-load  
+  google.maps.event.addDomListener(window, 'load', initialize);
+    
+  
+  </script>
+
 <script type="text/javascript">
   $(function() {
       $('#datepicker').datepicker();
@@ -218,8 +203,8 @@
 </script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwm9J76tZMpG-EYkdvUOni-whrV0EtssKYCTQHAox8skLSPDM2RiKAscwPMpMiLRnMykg/exec'
-  const form = document.forms['form-perizinan'];
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
+  const form = document.forms['informasi-publik'];
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-loading');
   const Alert = document.querySelector('.alert');

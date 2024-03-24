@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sertifikasi SLO</title>
+  <title>Daftar Layanan</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -53,13 +53,51 @@
     </div>
   </header><!-- End Header -->
 
-  <div class="col-lg-12 text-center text-lg-start">
-    <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Sertifikasi Layak Operasi</strong></h1>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="perpanjang.php" role="button">Perpanjang</a>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="daftar-baru.php" role="button">Buat Baru</a>
+  <div class="judul text-center text-lg-start">
+    <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Daftar Layanan</strong></h1>
+    <h5 data-aos="fade-right" data-aos-delay="100" style="text-align: center;">Silahkan Pilih Layanan Kami!</h5>
   </div>
 
-  <!-- End Hero -->
+  <div class="container" id="Harga" data-aos="fade-right" data-aos-delay="200">
+          <div class="row justify-content-md-center" style="color:white;">
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="https://oksip.pu.go.id/">
+                    <img src="assets/img/rumija.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Perijinan Rumija</h6>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="slo.php">
+                    <img src="assets/img/slo.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Sertifikasi Layak Operasi</h6>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="sewa-alat.php">
+                    <img src="assets/img/sewa.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Sewa Alat</h6>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="#">
+                    <img src="assets/img/lab.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Pengujian Lab</h6>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="informasi-publik.php">
+                    <img src="assets/img/informasi.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Permohonan Informasi Pubik</h6>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="https://www.lapor.go.id/">
+                    <img src="assets/img/pengaduan.png" class="img-fluid" alt="...">
+                </a>
+                <h6 class="card-title">Pengaduan</h6>
+            </div>
+          </div>
+      </div>
 
 
   <!-- ======= Footer ======= -->
