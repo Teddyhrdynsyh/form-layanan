@@ -70,51 +70,34 @@
               <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form method="POST" name="form-perizinan">
+            <form id="uploadForm" method="POST" action="https://script.google.com/macros/s/AKfycbwTWO9oSnfgtu0xRZfSMJcucv-7tNv1BQWXLvfh8BP-6o0fj2CqOzlxZdFWkkmJwxmB/exec" enctype="multipart">
+                <input type="hidden" value="" name="fileContent" id="fileContent">
+                <input type="hidden" value="" name="filename" id="filename">
                 <div class="form-floating mb-3">
-                  <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="nama">
+                  <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
                   <label for="floatingInput">Nama</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat" name="alamat">
+                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat" name="Alamat">
                   <label for="floatingInput">Alamat</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Email" name="email">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
                   <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Nomor WhatsApp" name="whatsapp">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Nomor WhatsApp" name="Whatsapp">
                   <label for="floatingInput">Nomor WhatsApp</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Nama Perusahaan" name="perusahaan">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Nama Perusahaan" name="Nama_perusahaan">
                   <label for="floatingInput">Nama Perusahaan</label>
                 </div>
-                <label for="floatingInput">Alat</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Excavator" name="alat" id="flexCheckDefault1">
-                  <label class="form-check-label" for="flexCheckDefault1">
-                    Excavator
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Bulldozer" name="alat" id="flexCheckDefault2">
-                  <label class="form-check-label" for="flexCheckDefault2">
-                    Bulldozer
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" value="Bulldozer" name="alat" id="flexCheckDefault3">
-                  <label class="form-check-label" for="flexCheckDefault3">
-                    Crane
-                  </label>
-                </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Upload Surat Permohonan Anda</label>
-                    <input class="form-control" type="file" id="formFile" name="Surat">
+                    <label for="file" class="form-label">Upload Surat Permohonan Anda</label>
+                    <input class="form-control" type="file" id="attach" name="attach">
                   </div>
-                    <button class="btn btn-primary btn-kirim rounded-pill" type="submit">Kirim</button>
+                    <button class="btn btn-primary btn-kirim rounded-pill" type="button" onclick="UploadFile();">Kirim</button>
                     <button class="btn btn-primary btn-loading d-none" type="button" disabled>
                       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                       Loading...
@@ -163,7 +146,7 @@
         
         <br>
         <h6 style="color:black;">*Catatan:</h6>
-        <p>Harga yang tertera belum termasuk biaya mobilisasi dan asuransi</p>
+        <h6 style="color:black;"><strong>Harga yang tertera belum termasuk biaya mobilisasi, asuransi dan operasional.</strong></h6>
       </div>
   <!-- katalog -->
 
@@ -211,40 +194,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<script type="text/javascript">
-  $(function() {
-      $('#datepicker').datepicker();
-  });
-</script>
-
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwm9J76tZMpG-EYkdvUOni-whrV0EtssKYCTQHAox8skLSPDM2RiKAscwPMpMiLRnMykg/exec'
-  const form = document.forms['form-perizinan'];
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoading = document.querySelector('.btn-loading');
-  const Alert = document.querySelector('.alert');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // ketika tombol submit dikilik
-    // tampilkan tombol loading hilangkan tombol kririm
-    btnLoading.classList.toggle('d-none');
-    btnKirim.classList.toggle('d-none');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then((response) => {
-        // tampilkan tombol loading hilangkan tombol kririm
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        // tampilkan alert
-        Alert.classList.toggle('d-none');
-        //reset formnya
-        form.reset();
-        console.log('Success!', response);
-    })
-      .catch(error => console.error('Error!', error.message))
-  });
+    function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('attach').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('uploadForm').submit();
+    }
+    reader.readAsDataURL(file);
+    }
 </script>
-
 
 </body>
 

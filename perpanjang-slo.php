@@ -68,36 +68,38 @@
               <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form method="POST" name="form-perizinan">
+            <form id="uploadForm" method="POST" action="https://script.google.com/macros/s/AKfycbxHgPq5E9mIvZzA0_h5uW_rEp4kpHp_WEn4dgFeB2rKsNKZ-jjd0i9XY1_wrrXs6WRE/exec" enctype="multipart">
+                <input type="hidden" value="" name="fileContent" id="fileContent">
+                <input type="hidden" value="" name="filename" id="filename">
                 <div class="form-floating mb-3">
-                  <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="nama">
+                  <input type="nama" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
                   <label for="floatingInput">Nama</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Email" name="email">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
                   <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Nomor WhatsApp" name="whatsapp">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Nomor WhatsApp" name="Whatsapp">
                   <label for="floatingInput">Nomor WhatsApp</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Nama Perusahaan" name="perusahaan">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Nama Perusahaan" name="Nama_perusahaan">
                   <label for="floatingInput">Nama Perusahaan</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Lokasi AMP" name="lokasi">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Lokasi AMP" name="Lokasi">
                   <label for="floatingInput">Lokasi AMP</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Titik Koordinat" name="koordinat">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Titik Koordinat" name="Koordinat">
                   <label for="floatingInput">Titik Koordinat</label>
                 </div>
                 <div class="mb-3 ">
-                    <label for="formFile" class="form-label">Upload Sertifikat AMP</label>
-                    <input class="form-control" type="file" id="formFile" name="Surat">
+                    <label for="file" class="form-label">Upload Sertifikat AMP</label>
+                    <input class="form-control" type="file" id="attach" name="attach">
                   </div>
-                    <button class="btn btn-primary btn-kirim rounded-pill" type="submit">Kirim</button>
+                    <button class="btn btn-primary btn-kirim rounded-pill" type="button" onclick="UploadFile();">Kirim</button>
                     <button class="btn btn-primary btn-loading d-none" type="button" disabled>
                       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                       Loading...
@@ -149,85 +151,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
-  // variabel global marker
-var marker;
-  
-  function taruhMarker(peta, posisiTitik){
-      
-      if( marker ){
-        // pindahkan marker
-        marker.setPosition(posisiTitik);
-      } else {
-        // buat marker baru
-        marker = new google.maps.Marker({
-          position: posisiTitik,
-          map: peta
-        });
-      }
-    
-       // isi nilai koordinat ke form
-      document.getElementById("lat").value = posisiTitik.lat();
-      document.getElementById("lng").value = posisiTitik.lng();
-      
-  }
-    
-  function initialize() {
-    var propertiPeta = {
-      center:new google.maps.LatLng(-8.5830695,116.3202515),
-      zoom:9,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    
-    var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-    
-    // even listner ketika peta diklik
-    google.maps.event.addListener(peta, 'click', function(event) {
-      taruhMarker(this, event.latLng);
-    });
-  
-  }
-  
-  
-  // event jendela di-load  
-  google.maps.event.addDomListener(window, 'load', initialize);
-    
-  
-  </script>
-
-<script type="text/javascript">
-  $(function() {
-      $('#datepicker').datepicker();
-  });
-</script>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
-  const form = document.forms['informasi-publik'];
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoading = document.querySelector('.btn-loading');
-  const Alert = document.querySelector('.alert');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // ketika tombol submit dikilik
-    // tampilkan tombol loading hilangkan tombol kririm
-    btnLoading.classList.toggle('d-none');
-    btnKirim.classList.toggle('d-none');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then((response) => {
-        // tampilkan tombol loading hilangkan tombol kririm
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        // tampilkan alert
-        Alert.classList.toggle('d-none');
-        //reset formnya
-        form.reset();
-        console.log('Success!', response);
-    })
-      .catch(error => console.error('Error!', error.message))
-  });
+    function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('attach').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('uploadForm').submit();
+    }
+    reader.readAsDataURL(file);
+    }
 </script>
 
 

@@ -67,27 +67,29 @@
             <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-            <form method="POST" name="informasi-publik" enctype="multipart">
+            <form id="uploadForm" method="POST" action="https://script.google.com/macros/s/AKfycbw98lURMLNj05xaNWKqQPtY5KJOF5KkmJiqiKuBzgthwpKEc6E4p_IftpDxGPIZN0xd7Q/exec" enctype="multipart">
+              <input type="hidden" value="" name="fileContent" id="fileContent">
+              <input type="hidden" value="" name="filename" id="filename">
                   <h6 style="color: black;">Data Pemohon Informasi</h6>   
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="floatingInput" placeholder="Nama" name="Nama">
                   <label for="floatingInput">Nama</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="identitas" class="form-control" id="floatingInput" placeholder="Nomor Identitas (KTP/SIM)" name="Identitas">
+                  <input type="identitas" class="form-control" id="floatingInput" placeholder="Nomor Identitas (KTP/SIM)" name="No_identitas">
                   <label for="floatingInput">Nomor Identitas (KTP/SIM)*</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="paspor/kk" class="form-control" id="floatingInput" placeholder="Paspor/Kartu Keluarga*" name="Paspor/kk">
+                  <input type="paspor/kk" class="form-control" id="floatingInput" placeholder="Paspor/Kartu Keluarga*" name="Paspor/KK">
                   <label for="floatingInput">Paspor/Kartu Keluarga*</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat Rumah" name="Rumah">
+                  <input type="alamat" class="form-control" id="floatingInput" placeholder="Alamat Rumah" name="Alamat_rumah">
                   <label for="floatingInput">Alamat Rumah</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="telepon" class="form-control" id="floatingInput" placeholder="Nomor Telepon" name="Telepon">
-                  <label for="floatingInput">Nomor Telepon</label>
+                  <input type="telepon" class="form-control" id="floatingInput" placeholder="Nomor WhatsApp" name="No_whatsapp">
+                  <label for="floatingInput">Nomor WhatsApp</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="Email">
@@ -98,16 +100,16 @@
                   <label for="floatingInput">Pekerjaan</label>
                 </div>
                 <div class="form-floating mb-5">
-                  <input type="kantor" class="form-control" id="floatingInput" placeholder="Alamat Kantor" name="Kantor">
+                  <input type="kantor" class="form-control" id="floatingInput" placeholder="Alamat Kantor" name="Alamat_kantor">
                   <label for="floatingInput">Alamat Kantor</label>
                 </div>
                 <h6 style="color: black;">Pengajuan Permohonan Informasi</h6>
                 <div class="form-floating mb-3">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="Informasi" style="height: 100px" name="Informasi"></textarea>
+                  <textarea class="form-control" placeholder="Leave a comment here" id="Informasi" style="height: 100px" name="Kebutuhan_informasi"></textarea>
                   <label for="floatingTextarea1">Rincian Informasi yang Dibutuhkan</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="Tujuan" style="height: 100px" name="Tujuan"></textarea>
+                  <textarea class="form-control" placeholder="Leave a comment here" id="Tujuan" style="height: 100px" name="Tujuan_informasi"></textarea>
                   <label for="floatingTextarea2">Rincian Tujuan Penggunaan Informasi</label>
                 </div>
                 <select class="form-select mb-3" aria-label=".form-select-lg example" name="Via">
@@ -119,10 +121,10 @@
                   <option value="Whatsapp">Whatsapp</option>
                 </select>
                 <div class="mb-3">
-                  <label for="formFile" class="form-label">Surat</label>
-                  <input class="form-control" type="file" id="formFile" name="Surat">
+                  <label for="file" class="form-label">Upload KTP</label>
+                  <input class="form-control" type="file" id="attach" name="attach">
                 </div>
-                  <button class="btn btn-primary btn-kirim rounded-pill" type="submit">Kirim</button>
+                  <button class="btn btn-primary btn-kirim rounded-pill" type="button" onclick="UploadFile();">Kirim</button>
                   <button class="btn btn-primary btn-loading d-none" type="button" disabled>
                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                   Loading...
@@ -170,42 +172,21 @@
 
   <!--Datepicker-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-      $('#datepicker').datepicker();
-  });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
-  const form = document.forms['informasi-publik'];
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoading = document.querySelector('.btn-loading');
-  const Alert = document.querySelector('.alert');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // ketika tombol submit dikilik
-    // tampilkan tombol loading hilangkan tombol kririm
-    btnLoading.classList.toggle('d-none');
-    btnKirim.classList.toggle('d-none');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then((response) => {
-        // tampilkan tombol loading hilangkan tombol kririm
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        // tampilkan alert
-        Alert.classList.toggle('d-none');
-        //reset formnya
-        form.reset();
-        console.log('Success!', response);
-    })
-      .catch(error => console.error('Error!', error.message))
-  });
-</script>
+    function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('attach').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('uploadForm').submit();
+    }
+    reader.readAsDataURL(file);
+    }
+  </script>
 
 
 </body>

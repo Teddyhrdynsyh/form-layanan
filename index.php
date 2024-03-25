@@ -62,37 +62,37 @@
           <div class="row justify-content-md-center" style="color:white;">
             <div class="col-sm-2" style="text-align: center;">
                 <a href="https://oksip.pu.go.id/">
-                    <img src="assets/img/rumija.png" class="img-fluid" alt="...">
+                    <img src="assets/img/rumija.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Perijinan Rumija</h6>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="slo.php">
-                    <img src="assets/img/slo.png" class="img-fluid" alt="...">
+                    <img src="assets/img/slo.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Sertifikasi Layak Operasi</h6>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="sewa-alat.php">
-                    <img src="assets/img/sewa.png" class="img-fluid" alt="...">
+                    <img src="assets/img/sewa.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Sewa Alat</h6>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="#">
-                    <img src="assets/img/lab.png" class="img-fluid" alt="...">
+                    <img src="assets/img/lab.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Pengujian Lab</h6>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="informasi-publik.php">
-                    <img src="assets/img/informasi.png" class="img-fluid" alt="...">
+                    <img src="assets/img/informasi.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Permohonan Informasi Pubik</h6>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="https://www.lapor.go.id/">
-                    <img src="assets/img/pengaduan.png" class="img-fluid" alt="...">
+                    <img src="assets/img/pengaduan.png" class="img-fluid" width="400px" height="400px">
                 </a>
                 <h6 class="card-title">Pengaduan</h6>
             </div>

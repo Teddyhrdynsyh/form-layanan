@@ -55,8 +55,8 @@
 
   <div class="col-lg-12 text-center text-lg-start">
     <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Sertifikasi Layak Operasi</strong></h1>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="perpanjang.php" role="button">Perpanjang</a>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="daftar-baru.php" role="button">Buat Baru</a>
+    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="perpanjang-slo.php" role="button">Perpanjang</a>
+    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="daftar-slo.php" role="button">Buat Baru</a>
   </div>
 
   <!-- End Hero -->
@@ -87,41 +87,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-      $('#datepicker').datepicker();
-  });
-</script>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
-  const form = document.forms['informasi-publik'];
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoading = document.querySelector('.btn-loading');
-  const Alert = document.querySelector('.alert');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // ketika tombol submit dikilik
-    // tampilkan tombol loading hilangkan tombol kririm
-    btnLoading.classList.toggle('d-none');
-    btnKirim.classList.toggle('d-none');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then((response) => {
-        // tampilkan tombol loading hilangkan tombol kririm
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        // tampilkan alert
-        Alert.classList.toggle('d-none');
-        //reset formnya
-        form.reset();
-        console.log('Success!', response);
-    })
-      .catch(error => console.error('Error!', error.message))
-  });
-</script>
-
 
 </body>
 
