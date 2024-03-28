@@ -141,41 +141,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<script type="text/javascript">
-  $(function() {
-      $('#datepicker').datepicker();
-  });
-</script>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx9W8uCyGP2BNPjOncasjJfGs_pUpvTu9hfOESP3KYzFCXXTe7rvpVafyRcy-m4SIDYmg/exec'
-  const form = document.forms['informasi-publik'];
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoading = document.querySelector('.btn-loading');
-  const Alert = document.querySelector('.alert');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // ketika tombol submit dikilik
-    // tampilkan tombol loading hilangkan tombol kririm
-    btnLoading.classList.toggle('d-none');
-    btnKirim.classList.toggle('d-none');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then((response) => {
-        // tampilkan tombol loading hilangkan tombol kririm
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        // tampilkan alert
-        Alert.classList.toggle('d-none');
-        //reset formnya
-        form.reset();
-        console.log('Success!', response);
-    })
-      .catch(error => console.error('Error!', error.message))
-  });
-</script>
-
-
 </body>
-
 </html>

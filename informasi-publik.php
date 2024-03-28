@@ -63,11 +63,11 @@
           <h2 class="title">Form Permohonan Informasi</h2>
       </div>
       <div class="card-body">
-          <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+          <div class="alert alert-success alert-dismissible fade show d-none" id="successMessage" role="alert">
             <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-            <form id="uploadForm" method="POST" action="https://script.google.com/macros/s/AKfycbw98lURMLNj05xaNWKqQPtY5KJOF5KkmJiqiKuBzgthwpKEc6E4p_IftpDxGPIZN0xd7Q/exec" enctype="multipart">
+            <form id="uploadForm" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
               <input type="hidden" value="" name="fileContent" id="fileContent">
               <input type="hidden" value="" name="filename" id="filename">
                   <h6 style="color: black;">Data Pemohon Informasi</h6>   
@@ -124,8 +124,8 @@
                   <label for="file" class="form-label">Upload KTP</label>
                   <input class="form-control" type="file" id="attach" name="attach">
                 </div>
-                  <button class="btn btn-primary btn-kirim rounded-pill" type="button" onclick="UploadFile();">Kirim</button>
-                  <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                  <button class="btn btn-primary btn-kirim rounded-pill" type="submit" id="btnKirim">Kirim</button>
+                  <button class="btn btn-primary btn-loading d-none" type="button" id="btnLoading" disabled>
                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                   Loading...
                   </button>
@@ -175,20 +175,138 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<script>
-    function UploadFile() {
-    var reader = new FileReader();
-    var file = document.getElementById('attach').files[0];
-    reader.onload = function(){
-    document.getElementById('fileContent').value=reader.result;
-    document.getElementById('filename').value=file.name;
-    document.getElementById('uploadForm').submit();
-    }
-    reader.readAsDataURL(file);
-    }
-  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah pengiriman formulir secara langsung
 
+      // Validasi formulir
+      if (!validateForm()) {
+        return; // Jika validasi gagal, hentikan pengiriman formulir
+      }
+
+      // Tampilkan tombol loading
+      document.getElementById('btnKirim').classList.add('d-none');
+      document.getElementById('btnLoading').classList.remove('d-none');
+
+      // Baca file menggunakan FileReader
+      var reader = new FileReader();
+      var file = document.getElementById('attach').files[0];
+      reader.onload = function() {
+        document.getElementById('fileContent').value = reader.result;
+        document.getElementById('filename').value = file.name;
+
+        // Mengambil data formulir
+        const formData = new FormData(document.getElementById('uploadForm'));
+
+        // Mengirim data formulir secara asinkron menggunakan fetch
+        fetch('https://script.google.com/macros/s/AKfycbxCPcEArBr2ILOkzCt--fxKGZtrc-vrZJFMkNQbTZExW16KPkse6eCa7hps6U8G-74/exec', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              // Jika pengiriman berhasil, tampilkan pesan sukses
+              document.querySelector('.alert').classList.remove('d-none');
+              // Reset formulir
+              document.getElementById('uploadForm').reset();
+            } else {
+              // Jika terjadi kesalahan, tampilkan pesan kesalahan
+              console.error('Gagal mengirim formulir');
+            }
+          })
+          .catch(error => {
+            // Jika terjadi kesalahan, tampilkan pesan kesalahan
+            console.error('Error!', error);
+          })
+
+          .finally(() => {
+            // Sembunyikan tombol loading dan tampilkan tombol Kirim
+            document.getElementById('btnKirim').classList.remove('d-none');
+            document.getElementById('btnLoading').classList.add('d-none');
+          });
+      }
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function validateForm() {
+    var nama = document.forms["uploadForm"]["Nama"].value;
+    var noIdentitas = document.forms["uploadForm"]["No_identitas"].value;
+    var pasporKK = document.forms["uploadForm"]["Paspor/KK"].value;
+    var alamatRumah = document.forms["uploadForm"]["Alamat_rumah"].value;
+    var noWhatsApp = document.forms["uploadForm"]["No_whatsapp"].value;
+    var email = document.forms["uploadForm"]["Email"].value;
+    var pekerjaan = document.forms["uploadForm"]["Pekerjaan"].value;
+    var alamatKantor = document.forms["uploadForm"]["Alamat_kantor"].value;
+    var kebutuhanInformasi = document.forms["uploadForm"]["Kebutuhan_informasi"].value;
+    var tujuanInformasi = document.forms["uploadForm"]["Tujuan_informasi"].value;
+    var via = document.forms["uploadForm"]["Via"].value;
+    var attach = document.forms["uploadForm"]["attach"].value;
+
+    if (nama == "") {
+      alert("Nama harus diisi");
+      document.forms["uploadForm"]["Nama"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (noIdentitas == "") {
+      alert("Nomor Identitas (KTP/SIM) harus diisi");
+      document.forms["uploadForm"]["No_identitas"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (pasporKK == "") {
+      alert("Paspor/Kartu Keluarga harus diisi");
+      document.forms["uploadForm"]["Paspor/KK"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (alamatRumah == "") {
+      alert("Alamat Rumah harus diisi");
+      document.forms["uploadForm"]["Alamat_rumah"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (noWhatsApp == "") {
+      alert("Nomor WhatsApp harus diisi");
+      document.forms["uploadForm"]["No_whatsapp"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (email == "") {
+      alert("Email harus diisi");
+      document.forms["uploadForm"]["Email"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (pekerjaan == "") {
+      alert("Pekerjaan harus diisi");
+      document.forms["uploadForm"]["Pekerjaan"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (alamatKantor == "") {
+      alert("Alamat Kantor harus diisi");
+      document.forms["uploadForm"]["Alamat_kantor"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (kebutuhanInformasi == "") {
+      alert("Kebutuhan informasi harus diisi");
+      document.forms["uploadForm"]["Kebutuhan_informasi"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (tujuanInformasi == "") {
+      alert("Tujuan informasi harus diisi");
+      document.forms["uploadForm"]["Tujuan_informasi"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (via == "") {
+      alert("Cara mendapatkan salinan informasi harus dipilih");
+      document.forms["uploadForm"]["Via"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    if (attach == "") {
+      alert("KTP harus diupload");
+      document.forms["uploadForm"]["attach"].focus(); // Fokus kembali ke bidang input
+      return false;
+    }
+    return true; // Return true jika semua validasi terpenuhi
+}
+</script>
 
 </body>
-
 </html>

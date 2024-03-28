@@ -55,8 +55,8 @@
 
   <div class="col-lg-12 text-center text-lg-start">
     <h1 data-aos="fade-right" style="text-align: center; font-size: 40px;"><strong>Sertifikasi Layak Operasi</strong></h1>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="perpanjang-slo.php" role="button">Perpanjang</a>
-    <a class="btn btn-outline-light rounded-pill m-2 mt-3" data-aos="fade-right" data-aos-delay="200" href="daftar-slo.php" role="button">Buat Baru</a>
+    <a class="btn btn-outline-light rounded-pill m-1 mt-3" data-aos="fade-right" data-aos-delay="200" href="perpanjang-slo.php" role="button">Perpanjang</a>
+    <a class="btn btn-outline-light rounded-pill m-1 mt-3" data-aos="fade-right" data-aos-delay="200" href="daftar-slo.php" role="button">Buat Baru</a>
   </div>
 
   <!-- End Hero -->
@@ -89,5 +89,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 </body>
-
 </html>

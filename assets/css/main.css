@@ -168,7 +168,15 @@ h6,
   text-align: center;
   color: #344676;
 }
-  
+
+.card-1 {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  margin-top: 50px;
+  border: 2rem;
+}
 .card {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

@@ -68,7 +68,7 @@
               <strong>Terimakasih!</strong> Pesan Anda sudah terkirim
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form id="uploadForm" method="POST" action="https://script.google.com/macros/s/AKfycbxHgPq5E9mIvZzA0_h5uW_rEp4kpHp_WEn4dgFeB2rKsNKZ-jjd0i9XY1_wrrXs6WRE/exec" enctype="multipart">
+            <form id="uploadForm" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
                 <input type="hidden" value="" name="fileContent" id="fileContent">
                 <input type="hidden" value="" name="filename" id="filename">
                 <div class="form-floating mb-3">
@@ -99,8 +99,8 @@
                     <label for="file" class="form-label">Upload Sertifikat AMP</label>
                     <input class="form-control" type="file" id="attach" name="attach">
                   </div>
-                    <button class="btn btn-primary btn-kirim rounded-pill" type="button" onclick="UploadFile();">Kirim</button>
-                    <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                    <button class="btn btn-primary btn-kirim rounded-pill" type="submit" id="btnKirim">Kirim</button>
+                    <button class="btn btn-primary btn-loading d-none" type="button" id="btnLoading" disabled>
                       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                       Loading...
                     </button>
@@ -152,19 +152,107 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <script>
-    function UploadFile() {
-    var reader = new FileReader();
-    var file = document.getElementById('attach').files[0];
-    reader.onload = function(){
-    document.getElementById('fileContent').value=reader.result;
-    document.getElementById('filename').value=file.name;
-    document.getElementById('uploadForm').submit();
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah pengiriman formulir secara langsung
+
+      // Validasi formulir
+      if (!validateForm()) {
+        return; // Jika validasi gagal, hentikan pengiriman formulir
+      }
+
+      // Tampilkan tombol loading
+      document.getElementById('btnKirim').classList.add('d-none');
+      document.getElementById('btnLoading').classList.remove('d-none');
+
+      // Baca file menggunakan FileReader
+      var reader = new FileReader();
+      var file = document.getElementById('attach').files[0];
+      reader.onload = function() {
+        document.getElementById('fileContent').value = reader.result;
+        document.getElementById('filename').value = file.name;
+
+        // Mengambil data formulir
+        const formData = new FormData(document.getElementById('uploadForm'));
+
+        // Mengirim data formulir secara asinkron menggunakan fetch
+        fetch('https://script.google.com/macros/s/AKfycbxHgPq5E9mIvZzA0_h5uW_rEp4kpHp_WEn4dgFeB2rKsNKZ-jjd0i9XY1_wrrXs6WRE/exec', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              // Jika pengiriman berhasil, tampilkan pesan sukses
+              document.querySelector('.alert').classList.remove('d-none');
+              // Reset formulir
+              document.getElementById('uploadForm').reset();
+            } else {
+              // Jika terjadi kesalahan, tampilkan pesan kesalahan
+              console.error('Gagal mengirim formulir');
+            }
+          })
+          .catch(error => {
+            // Jika terjadi kesalahan, tampilkan pesan kesalahan
+            console.error('Error!', error);
+          })
+
+          .finally(() => {
+            // Sembunyikan tombol loading dan tampilkan tombol Kirim
+            document.getElementById('btnKirim').classList.remove('d-none');
+            document.getElementById('btnLoading').classList.add('d-none');
+          });
+      }
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function validateForm() {
+    var nama = document.forms["uploadForm"]["Nama"].value;
+    var email = document.forms["uploadForm"]["Email"].value;
+    var whatsapp = document.forms["uploadForm"]["Whatsapp"].value;
+    var namaPerusahaan = document.forms["uploadForm"]["Nama_perusahaan"].value;
+    var lokasi = document.forms["uploadForm"]["Lokasi"].value;
+    var koordinat = document.forms["uploadForm"]["Koordinat"].value;
+    var attach = document.forms["uploadForm"]["attach"].value;
+
+    if (nama == "") {
+        alert("Nama harus diisi");
+        document.forms["uploadForm"]["Nama"].focus(); // Fokus kembali ke bidang input
+        return false;
     }
-    reader.readAsDataURL(file);
+    if (email == "") {
+        alert("Email harus diisi");
+        document.forms["uploadForm"]["Email"].focus(); // Fokus kembali ke bidang input
+        return false;
     }
+    if (whatsapp == "") {
+        alert("Nomor WhatsApp harus diisi");
+        document.forms["uploadForm"]["Whatsapp"].focus(); // Fokus kembali ke bidang input
+        return false;
+    }
+    if (namaPerusahaan == "") {
+        alert("Nama Perusahaan harus diisi");
+        document.forms["uploadForm"]["Nama_perusahaan"].focus(); // Fokus kembali ke bidang input
+        return false;
+    }
+    if (lokasi == "") {
+        alert("Lokasi AMP harus diisi");
+        document.forms["uploadForm"]["Lokasi"].focus(); // Fokus kembali ke bidang input
+        return false;
+    }
+    if (koordinat == "") {
+        alert("Titik Koordinat harus diisi");
+        document.forms["uploadForm"]["Koordinat"].focus(); // Fokus kembali ke bidang input
+        return false;
+    }
+    if (attach == "") {
+        alert("Sertifikat AMP harus diupload");
+        document.forms["uploadForm"]["attach"].focus(); // Fokus kembali ke bidang input
+        return false;
+    }
+    return true; // Return true jika semua validasi terpenuhi
+}
 </script>
 
-
 </body>
-
 </html>
