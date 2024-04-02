@@ -1,3 +1,106 @@
+@media (max-width: 767px) {
+  .card-title {
+    color: black !important; /* Change the color to black for card titles */
+  }
+}
+@media (max-width: 767px) {
+  /* Hide the "Contact Us" link */
+  #navbar ul li:first-child {
+    display: none;
+  }
+
+  /* Add the hamburger menu icon */
+  #navbar {
+    padding: 0 15px;
+  }
+
+  #navbar .navbar-toggler {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  #navbar .navbar-toggler:focus {
+    outline: none;
+  }
+
+  #navbar .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  #navbar .navbar-toggler-icon::before,
+  #navbar .navbar-toggler-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    transition: top 0.3s ease, transform 0.3s ease;
+  }
+
+  #navbar .navbar-toggler-icon::before {
+    top: -10px;
+  }
+
+  #navbar .navbar-toggler-icon::after {
+    top: 10px;
+  }
+
+  #navbar .navbar-toggler.collapsed .navbar-toggler-icon::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  #navbar .navbar-toggler.collapsed .navbar-toggler-icon::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  #navbar .navbar-collapse {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #344676;
+    z-index: 99;
+    padding: 15px 0;
+  }
+
+  #navbar .navbar-collapse.show {
+    display: block;
+  }
+
+  #navbar .navbar-nav {
+    display: block;
+    text-align: center;
+  }
+
+  #navbar .navbar-nav li {
+    margin-bottom: 10px;
+  }
+
+  #navbar .navbar-nav a {
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  #navbar .navbar-nav a:hover {
+    color: #ffc928;
+  }
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -214,7 +317,7 @@ h6,
     padding-bottom: 50px;
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .card-5 .card-body {
       padding: 40px 30px;
       padding-bottom: 50px;
