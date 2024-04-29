@@ -306,6 +306,12 @@
     }
     return true; // Return true jika semua validasi terpenuhi
 }
+
+// Menambahkan event listener untuk menutup alert
+document.querySelector('.alert').addEventListener('click', function() {
+    this.classList.add('d-none'); // Sembunyikan alert
+    location.reload(); // Refresh halaman
+  });
 </script>
 
 </body>

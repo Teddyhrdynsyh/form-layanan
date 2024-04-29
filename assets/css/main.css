@@ -1,8 +1,9 @@
 @media (max-width: 767px) {
-  .card-body .card-title {
+  .card-body .card-title{
     color: black !important; /* Change the color to black for card titles */
   }
 }
+
 @media (max-width: 767px) {
   /* Hide the "Contact Us" link */
   #navbar ul li:first-child {
@@ -211,7 +212,6 @@ h6,
 .navbar a:focus i {
   font-size: 12px;
   line-height: 0;
-  margin-left: 5px;
 }
 
 .navbar a:hover,
@@ -222,6 +222,21 @@ h6,
 }
 .col-lg-12{
   margin-top: 200px;
+}
+
+.judul{
+  margin-top: 200px;
+  width: 900px;
+  margin: auto;
+}
+
+.subjudul{
+  margin-top: 150px;
+}
+.accordion{
+  margin: auto;
+  width: 900px;
+  align-items: center;
 }
 
 .judul {
@@ -286,6 +301,7 @@ h6,
     border-radius: 3px;
     background: #fff;
     margin-top: 50px;
+    margin: auto;
     width: 680px;
   }
   
@@ -318,7 +334,7 @@ h6,
   }
   
   @media (max-width: 768px) {
-    .card-5 .card-body {
+    .card-5 .card-body .accordion .judul .subjudul{
       padding: 40px 30px;
       padding-bottom: 50px;
     }
